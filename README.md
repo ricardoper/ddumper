@@ -4,8 +4,8 @@ As a plus, 2 of this helpers dumps your variables in expanded mode.
 
 
 ## Requirements ##
-- PHP Version >= 7.1
-- Symfony VarDumper >= 4.3
+- PHP Version >= 7.2.5
+- Symfony VarDumper >= 5.0
 
 
 ## Installation ##
@@ -14,7 +14,7 @@ The recommended way to install DDumper is through [Composer](http://getcomposer.
 ```json
 {
     "require": {
-        "ricardoper/ddumper": "^1.0"
+        "ricardoper/ddumper": "^1.1"
     }
 }
 ```
