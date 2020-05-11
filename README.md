@@ -22,7 +22,7 @@ The recommended way to install DDumper is through [Composer](http://getcomposer.
 
 ## Helpers:
 + `d($var1, $var2, ...)` - Dump vars in colapsed mode by default
-+ `dd($var1, $var2, ...)` - Dump & die vars in colapsed mode by default
++ `ddd($var1, $var2, ...)` - Dump & die vars in colapsed mode by default
 + `de($var1, $var2, ...)` - Dump vars in expanded mode by default
 + `dde($var1, $var2, ...)` - Dump & die vars in expanded mode by default
 
@@ -31,9 +31,9 @@ The recommended way to install DDumper is through [Composer](http://getcomposer.
 
 ## Examples ##
 
-#### dd()
+#### ddd()
 ```php
-<?php dd(true, 1234, 'string', [
+<?php ddd(true, 1234, 'string', [
     'key1' => 'val1',
     'key2' => [
         'l1_key1' => 'l1_val1',
