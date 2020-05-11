@@ -9,15 +9,21 @@ class Dumper
     /**
      * Dump a value
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return void
      */
     public function dump($value)
     {
         if (class_exists(CliDumper::class)) {
-            $dumper = in_array(PHP_SAPI, ['cli', 'phpdbg']) ? new CliDumper : new HtmlDumper;
+            $dumper = null;
 
-            $dumper->setTheme('laravel');
+            if (in_array(PHP_SAPI, ['cli', 'phpdbg']) === true) {
+                $dumper = new CliDumper;
+            } else {
+                $dumper = new HtmlDumper;
+
+                $dumper->setTheme('laravel');
+            }
 
             $dumper->dump((new VarCloner)->cloneVar($value));
         } else {
@@ -28,15 +34,21 @@ class Dumper
     /**
      * Dump a value with all nodes expanded
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return void
      */
     public function dumpExpanded($value)
     {
         if (class_exists(CliDumper::class)) {
-            $dumper = in_array(PHP_SAPI, ['cli', 'phpdbg']) ? new CliDumper : new HtmlDumperExpanded;
+            $dumper = null;
 
-            $dumper->setTheme('laravel');
+            if (in_array(PHP_SAPI, ['cli', 'phpdbg']) === true) {
+                $dumper = new CliDumper;
+            } else {
+                $dumper = new HtmlDumperExpanded;
+
+                $dumper->setTheme('laravel');
+            }
 
             $dumper->dump((new VarCloner)->cloneVar($value));
         } else {

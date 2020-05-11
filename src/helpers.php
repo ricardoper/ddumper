@@ -21,14 +21,14 @@ if (!function_exists('d')) {
     }
 }
 
-if (!function_exists('dd')) {
+if (!function_exists('ddd')) {
     /**
      * Dump the passed variables and end the script
      *
      * @param  mixed $args
      * @return void
      */
-    function dd(...$args)
+    function ddd(...$args)
     {
         foreach ($args as $x) {
             (new Dumper)->dump($x);
